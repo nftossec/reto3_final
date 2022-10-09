@@ -74,15 +74,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                    <verbose>true</verbose>
-                    <fork>true</fork>
-                    <executable>/home/opc/reto3_final/src/test/java/com/reto3_final/reto3_final/Reto3FinalApplicationTests.java</executable>
-                    <compilerVersion>1.3</compilerVersion>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
 
-                </configuration>
             </plugin>
 
         </plugins>
