@@ -14,17 +14,27 @@ public class Score implements Serializable {
     private int score;
     private String message;
 
-    @OneToOne
+    /*@OneToOne
     @JsonIgnoreProperties("score")
-    private Reservation reservation;
+    private Reservation reservation; */
 
     public Score(){}
 
+    /*
     public Score(Integer score, String message, Reservation reservation) {
         this.score = score;
         this.message = message;
         this.reservation = reservation;
+    }  */
+
+
+    public Score(Integer score, String message) {
+        this.score = score;
+        this.message = message;
+
     }
+
+
 
     public Integer getId() {
         return id;
@@ -49,13 +59,13 @@ public class Score implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
-
+/*
     public Reservation getReservation() {
         return reservation;
     }
 
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
-    }
+    }  */
 }
 

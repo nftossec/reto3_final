@@ -1,4 +1,4 @@
-const BASE_URL_SCORE = 'http://localhost:8080/api/Score/save';
+//const BASE_URL_SCORE = 'http://localhost:8080/api/Score/save';
 
 function loadScoreForm(idReservation){
     hideReservations();
@@ -81,7 +81,7 @@ function saveScore(idReservation){
     }
 
     $.ajax({
-        url: BASE_URL_SCORE,
+        url: 'api/Score/save',
         type: 'POST',
         data: dataToSend,
         contentType: 'application/json',

@@ -23,12 +23,18 @@ public class Reservation implements Serializable {
     private Bike bike;
 
     @ManyToOne
-    @JoinColumn(name = "clientId")
+    @JoinColumn(name = "IdClient")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
-    @OneToOne(cascade = {CascadeType.REMOVE}, mappedBy = "reservation")
+    /*
+   @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "reservation")
     @JsonIgnoreProperties("reservation")
+    private Score score;
+*/
+    @OneToOne(cascade = CascadeType.ALL)
+    //@JsonIgnoreProperties("reservations")
+    //@PrimaryKeyJoinColumn
     private Score score;
 
     public Reservation(){}

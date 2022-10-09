@@ -19,16 +19,17 @@ public class Client implements Serializable {
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
-    @JsonIgnoreProperties({"client","bike"})
+    @JsonIgnoreProperties({"client","bikes"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
-    @JsonIgnoreProperties({"client","bike"})
+    @JsonIgnoreProperties({"client","bikes"})
     private List<Reservation> reservations;
 
     public Client(){}
 
-    public Client(String email, String password, String name, Integer age, List<Message> messages, List<Reservation> reservations) {
+    public Client(Integer idClient, String email, String password, String name, Integer age, List<Message> messages, List<Reservation> reservations) {
+        this.idClient = idClient;
         this.email = email;
         this.password = password;
         this.name = name;
