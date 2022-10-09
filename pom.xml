@@ -74,9 +74,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <parameters>true</parameters>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.reto3_final.reto3_final.Reto3FinalApplication</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
