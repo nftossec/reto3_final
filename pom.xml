@@ -14,7 +14,7 @@
     <name>reto3_final</name>
     <description>reto3_final</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>18</java.version>
     </properties>
     <dependencies>
         <dependency>
