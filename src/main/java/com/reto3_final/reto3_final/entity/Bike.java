@@ -20,20 +20,21 @@ public class Bike implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")                 //como almacena Id de categoria
-    @JsonIgnoreProperties("bikes")
+    @JsonIgnoreProperties("bike")
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")  // mappea messages
-    @JsonIgnoreProperties({"bike","client"})
+    @JsonIgnoreProperties({"client","bike"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")      //mappea reservations
-    @JsonIgnoreProperties({"bike","client"})
+    @JsonIgnoreProperties({"client","bike"})
     private List<Reservation> reservations;
 
     public Bike(){}
 
-    public Bike(String name, String brand, Integer year, String description, Category category, List<Message> messages, List<Reservation> reservations) {
+    public Bike(Integer id, String name, String brand, Integer year, String description, Category category, List<Message> messages, List<Reservation> reservations) {
+        this.id = id;
         this.name = name;
         this.brand = brand;
         this.year = year;

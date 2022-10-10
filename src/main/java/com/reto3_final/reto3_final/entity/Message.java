@@ -26,7 +26,8 @@ public class Message implements Serializable {
 
     public Message(){}
 
-    public Message(String messageText, Bike bike, Client client) {
+    public Message(Integer idMessage, String messageText, Bike bike, Client client) {
+        this.idMessage = idMessage;
         this.messageText = messageText;
         this.bike = bike;
         this.client = client;
